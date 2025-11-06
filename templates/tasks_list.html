@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <h2>Tasks</h2>
+  {% if tasks %}
+    <ul>
+      {% for t in tasks %}
+        <li>
+          <strong>{{ t.title }}</strong>
+          {% if t.completed %}  {% endif %}
+          <div>{{ t.description|linebreaksbr }}</div>
+          <small>Priority: {{ t.get_priority_display }}{% if t.due_date %} — Due: {{ t.due_date }}{% endif %}</small>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No tasks yet. <a href="/tasks/create/">Create one</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}

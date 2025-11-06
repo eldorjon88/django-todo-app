@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Todo App</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:900px; margin:2rem auto; }
+    header { display:flex; justify-content:space-between; align-items:center; }
+    nav a { margin-right: 1rem; text-decoration:none; }
+    .card{ border:1px solid #ddd; padding:1rem; border-radius:8px; margin-bottom:1rem; }
+    form input, form textarea, form select { width:100%; padding:0.5rem; margin-bottom:0.5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Todo App</a></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/tasks/">Tasks</a>
+      <a href="/tasks/create/">Create Task</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
